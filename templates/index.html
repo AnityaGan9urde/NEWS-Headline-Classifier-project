@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NEWS SEGMENTATION API</title>
+        <link rel="stylesheet" href='{{ url_for('static', filename='css/main.css') }}'}">
+    </head>
+    <body>
+        <div>
+            <form action="{{ url_for('predict')}}" method="post">
+                <div>
+                <center><h1 class="h1">The News Segmentation Api</h1></center>
+                <center><textarea name="article" class="textarea" placeholder="Copy-paste a News article here..." required></textarea><center>
+                </div><br>
+                <div><center><button type="submit" class="button button-shadow button-zoom"><b>Predict</b></button></center></div><br><br>
+                <center><h1>{{prediction_text}}</h1></center>
+            </form>
+        </div>
+    </body>
+</html>
