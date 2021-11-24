@@ -9,10 +9,11 @@
             <form action="{{ url_for('predict')}}" method="post">
                 <div>
                 <center><h1 class="h1">The News Segmentation Api</h1></center>
+                <center><a href="https://github.com/AnityaGan9urde/NEWS-segmentation-project">View Code</a></center><br>
                 <center><textarea name="article" class="textarea" placeholder="Copy-paste a News article here..." required></textarea><center>
                 </div><br>
                 <div><center><button type="submit" class="button button-shadow button-zoom"><b>Predict</b></button></center></div><br><br>
-                <center><h1>{{prediction_text}}</h1></center>
+                <center><h2>{{prediction_text}}</h2></center>
             </form>
         </div>
     </body>
