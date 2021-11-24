@@ -43,5 +43,5 @@ input[type="submit"]:hover,
             width: 700px;
 }
 body {
-            background:url(/static/images/paper2.jpg) no-repeat center center;
+            background:url(/static/css/images/paper2.jpg) no-repeat center center;
 }
