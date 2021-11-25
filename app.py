@@ -28,7 +28,7 @@ def predict():
     topic, prob_scores = predict_topic(text=text, model=lr_model)
     print(prob_scores)
 
-    return render_template('index.html', prediction_text='The topic is most likely to be {}.'.format(topic))
+    return render_template('index.html', prediction_text='This NEWS article is most likely to be related to {}.'.format(topic))
 
 if __name__ == '__main__':
     lr_model = joblib.load('./models/lr_model.pkl')
