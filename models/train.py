@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
-df = pd.read_csv('./data/train.csv')
+df = pd.read_csv('train.csv')
 
 df['category_id'] = df['Category'].factorize()[0]
 
@@ -17,11 +17,8 @@ labels = df.category_id
 
 model = LogisticRegression(random_state=0)
 
-#Split Data
-X_train, X_test, y_train, y_test, indices_train, indices_test = train_test_split(features, labels, df.index, test_size=0.33, random_state=42)
-
 #Train Algorithm
-lr_model = model.fit(X_train, y_train)
+lr_model = model.fit(features, labels)
 
 joblib.dump(lr_model, 'lr_model.pkl')
 
