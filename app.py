@@ -13,7 +13,7 @@ lda_model = joblib.load('./models/lda_model.jl')
 
 nlp = spacy.load("en_core_web_sm", disable=['parser', 'ner'])
 
-topic_dict = {'0': 'entertainment', '1': 'sports', '2': 'politics', '3': 'business', '4': 'technology'}
+topic_dict = {'0': 'politics', '1': 'technology', '2': 'sports', '3': 'entertainment', '4': 'business'}
 
 vectorizer = vectorize()
 
