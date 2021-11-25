@@ -2,8 +2,8 @@ import numpy as np
 from utils import vectorize
 
 vectorizer = vectorize()
-id_to_category = {0: 'business', 1: 'tech', 2: 'politics', 3: 'sport', 4: 'entertainment'}
-category_to_id = {'business': 0, 'tech': 1, 'politics': 2, 'sport': 3, 'entertainment': 4}
+
+id_to_category = {0: 'business', 1: 'technology', 2: 'politics', 3: 'sports', 4: 'entertainment'}
 
 def predict_topic(text, model):
     text = vectorizer.transform(text)
