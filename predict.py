@@ -1,21 +1,13 @@
 import numpy as np
-
-from preprocess import sent_to_words, lemmatization
 from utils import vectorize
 
 vectorizer = vectorize()
+id_to_category = {0: 'business', 1: 'tech', 2: 'politics', 3: 'sport', 4: 'entertainment'}
+category_to_id = {'business': 0, 'tech': 1, 'politics': 2, 'sport': 3, 'entertainment': 4}
 
-def predict_topic(text, nlp, model, vectorizer, kw):
-    # Step 1: Clean with simple_preprocess
-    text = list(sent_to_words(text))
-
-    # Step 2: Lemmatize
-    text = lemmatization(text, nlp, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV'])
-
-    # Step 3: Vectorize transform
+def predict_topic(text, model):
     text = vectorizer.transform(text)
-
-    # Step 4: LDA Transform
-    topic_probability_scores = model.transform(text)
-    topic = kw.iloc[np.argmax(topic_probability_scores), :].values.tolist()
+    topic_probability_scores = model.predict_proba(text)
+    prediction = model.predict(text)
+    topic = id_to_category[prediction[0]]
     return topic, topic_probability_scores
