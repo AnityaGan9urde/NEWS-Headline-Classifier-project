@@ -10,7 +10,20 @@
                 <div>
                 <center><h1>The News Segmentation Api</h1></center>
                 <center><a href="https://github.com/AnityaGan9urde/NEWS-segmentation-project">View Code</a></center>
-                <center><textarea name="article" class="textarea" placeholder="Copy-paste a News article here..." required></textarea><center>
+                <center>
+                    <table>
+                        <tr>
+                            <td>
+                            <select>
+                                <option value="Bert"><button>Bert Model</button><br><br></option>
+                                <option value="LR"><button>Logistic Regression</button></option>
+                            </select>
+                            </td>
+                            <td>
+                                <textarea name="article" class="textarea" placeholder="Copy-paste a News article here..." required></textarea><center>
+                            </td>
+                        </tr>
+                    </table>
                 </div><br>
                 <div><center><button type="submit" class="button button-shadow button-zoom"><b>Predict</b></button></center></div><br><br>
                 <center><h2>{{prediction_text}}</h2></center>
