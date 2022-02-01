@@ -1,12 +1,14 @@
 # NEWS Headline Classifier 
-- A Django app to determine the topic for a News article headline/title using a BERT model.
-- Can detect around 40 topics for a title.
-- Trained on a dataset from Kaggle.
+- A Django app to determine the topic for a News article headline / title using the BERT model.
+- Can detect around 40 topics for a title.  
+---
+### :warning: Note that the trained Bert model is not included in this repository due to GitHub file size limits.
+---
 ## App preview:<br>
 *Coming soon...*
 ## Dataset:
 - The data used for training was taken from Kaggle.
-- Dataset link: 
+- Dataset link: https://www.kaggle.com/rmisra/news-category-dataset.
 - The dataset consists of around 200,000 rows of News Article related information.
 ## Preprocessing:
 - I kept only two columns from the dataset: `df.headline` and `df.category`. 
