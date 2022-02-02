@@ -2,7 +2,7 @@
 - A Django app to determine the topic for a News article headline / title using the BERT model.
 - Can detect around 40 topics for a title.  
 ---
-### :warning: Note that the trained Bert model is not included in this repository due to GitHub file size limits.
+### :warning: Note that the trained Bert model is not included in this repository due to GitHub file size limits but can be downloaded from a Google Drive link shared below.
 ---
 ## App preview:<br>
 <img src="https://github.com/AnityaGan9urde/NEWS-Headline-Classifier-project/blob/main-main/app_preview.gif"></img>
@@ -47,11 +47,14 @@ model.compile(optimizer=optimizer, loss=loss, metrics=[acc])
 ```
 
 ## Training:
-- I trained the model for 8 epochs and achieved a training accuracy of 92% and a validation accuracy of 90%.
-- The training was carried on for 9 hours on an Nvidia 1050 Ti GPU.
+- I trained the model for 8 epochs and achieved a training accuracy of around 80% and a validation accuracy of 84%.
+- The training was carried on for 6 hours on an Nvidia 1050 Ti GPU.
+- The model can also be trained for a longer time, which will be done in the future due to time constraints.
+- The Bert model can be found here: https://drive.google.com/file/d/14OjmYJyfxBfE7w8PNpgKiZHjdYRv8d3x/view?usp=sharing
 ## Django App:
 - I wrapped the model in a django app and created an interface where users can interact with the model.
 - Users have an option to select from BERT model and a Logistic Regression base model. They can also choose the top 'N' predictions they want for a headline.
+- The data can also be stored in a **MySQL** database if the user finds the prediction to be correct so as to create a new data from users itself.
 ## Deployment:
 - The app can be Dockerize and deployed on an AWS instance or a GCP instance.
 - Each deploment will require some different files for.eg. DockerFile, etc. to run them on the cloud.
