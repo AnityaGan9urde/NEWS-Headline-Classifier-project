@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import newNews
 
 import tensorflow as tf
 from transformers import BertTokenizer
@@ -109,8 +110,19 @@ def predict(request):
             print(f'Prediction: {pos[i]} with a prob of {vals[i]}%')
 
     op_dict = dict(zip(pos, vals))
-    context = {'op_dict': op_dict}
+    headline = request.POST.get('headline').replace(' ', '_')
+    model = request.POST.get('model')
+    print(model)
+    pred_topic = [elem for elem in op_dict.keys()]
+    context = {'op_dict': op_dict, 'headline': headline, 'pred_topic': pred_topic[0], 'model': model}
     print('op_dict:', op_dict)
 
     return render(request, 'index.html', context)
 
+def savedb(request):
+    if request.method == 'POST':
+        headline = request.POST.get('headline')
+        topic = request.POST.get('topic')
+        reg = newNews(headline=str(headline), topic=topic)
+        reg.save()
+    return render(request, 'index.html')
