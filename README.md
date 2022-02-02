@@ -5,7 +5,7 @@
 ### :warning: Note that the trained Bert model is not included in this repository due to GitHub file size limits.
 ---
 ## App preview:<br>
-*Coming soon...*
+<img src="https://github.com/AnityaGan9urde/NEWS-Headline-Classifier-project/blob/main-main/app_preview.gif"></img>
 ## Dataset:
 - The data used for training was taken from Kaggle.
 - Dataset link: https://www.kaggle.com/rmisra/news-category-dataset.
