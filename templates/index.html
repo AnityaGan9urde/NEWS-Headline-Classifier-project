@@ -8,10 +8,15 @@
     <body>
         <div>
             <center>
+            {% if pred_topic %}
+            <form method="post" action="savedb">
+            {% else %}
             <form action="predict" method="post">
-                {% csrf_token %}
-                <hr>
+            {% endif %}
+            {% csrf_token %}
+            <hr>
             <h1 style="color: #606060;">Type a News Article headline to know its topic:</h1>
+            <a href="https://github.com/AnityaGan9urde/NEWS-Headline-Classifier-project">View Source Code</a>
                 <hr>
                 <div>
                     <br><br>
@@ -26,14 +31,10 @@
                         <option name="5" value="5">Top 5 predictions</option>
                         <option name="10" value="10">Top 10 predictions</option>
                         <option name="20" value="20">Top 20 predictions</option>
-                    </select><br><br>
+                    </select><br>
                 </div>
 
-                <div class="form-group">
-                    <textarea name="headline" class="form-field" placeholder="Type a News Article Headline"></textarea>
-                    <button type="submit"><b style="color: #606060;">Predict</b></button>
-                </div>
-            </form>
+            
             <br>
             <h2 style="color: #606060;">
             {% if op_dict %}
@@ -46,10 +47,24 @@
             </table>
             {% endif %}
             </h2>
-            <hr>
-            <br><br>
-            <a href="https://github.com/AnityaGan9urde/NEWS-Headline-Classifier-project">View Source Code</a></center>
-            </center>
+            <div class="form-group">
+                <textarea name="headline" class="form-field" placeholder="Type a News Article Headline"></textarea>
+                {% if pred_topic %}
+                <br>
+                <h3 style="color: #606060;">If the response is good enough you can save it to the database. Do you want to save it?</h3>
+                <input type="hidden" name="headline" value={{headline}}>
+                <input type="hidden" name="topic" value={{pred_topic}}>
+                <input type="hidden" name="model" value={{model}}>
+                <button type="submit"><b style="color: #606060;">Save To DataBase</b></button>
+                <button type="submit" src="index.html"><b style="color: #606060;">No</b></button>
+                {% else %}
+                <button type="submit"><b style="color: #606060;">Predict</b></button>
+                {% endif %}
+            </div>
+        </form>
+        <br><br>
+        <hr>
+        </center>
         </div>
     </body>
 </html>
