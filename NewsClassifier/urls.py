@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('^$', views.index, name='HomePage'),
     url('predict', views.predict, name='Predict'),
+    url('savedb', views.savedb, name='SaveDB')
 ]
