@@ -57,4 +57,5 @@ model.compile(optimizer=optimizer, loss=loss, metrics=[acc])
 - The data can also be stored in a **MySQL** database if the user finds the prediction to be correct so as to create a new data from users itself.
 ## Deployment:
 - The app can be Dockerize and deployed on an AWS instance or a GCP instance.
-- Each deploment will require some different files for.eg. DockerFile, etc. to run them on the cloud.
+- Each different deploment will require some different shell files to run them on the cloud.
+- I will be deploying the docker image soon to a cloud platform (most likey it not being AWS).
