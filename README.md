@@ -58,4 +58,4 @@ model.compile(optimizer=optimizer, loss=loss, metrics=[acc])
 ## Deployment:
 - The app can be Dockerize and deployed on an AWS instance or a GCP instance.
 - Each different deploment will require some different shell files to run them on the cloud.
-- I will be deploying the docker image soon to a cloud platform (most likey it not being AWS).
+- I will be deploying the docker image soon to a cloud platform (most likely it not being AWS).
